@@ -3,6 +3,9 @@
 <p>Contacts</p>
 <p>
 <ul>
+<% @contacts.each do |contact| %>
+  <li><%= contact.first_name %> <%= contact.last_name %></li>
+<% end %>
   <li><a href="/contacts">View all contacts</a></li>
   <p>Add new contact</p>
   <!-- please complete me with links to other actions -->
