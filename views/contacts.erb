@@ -1,17 +1,21 @@
-<h1>Welcome to <%= @crm_app_name %></h1>
 
-<p>Contacts</p>
-  <p>Add new contact</p>
+<div class="subtitle">Contacts</div>
+
+
+
+
+<div class="clistbg">
+<div class="contactlist">
 <ul>
 <% @contacts.each do |contact| %>
   <li><%= contact.first_name %> <%= contact.last_name %></li>
 <% end %>
-  <li><a href="/contacts">View all contacts</a></li>
-
+</ul>
 <ul>
   <% $rolodex.contacts.each do |contact| %>
     <li><%= contact.first_name %> <%= contact.last_name %></li>
-    
   <% end %>
 </ul>
-</ul>
+</div>
+</div>
+  <div class="addnew"><li><a href="/contacts/new">Add new contact</a></li></div>
