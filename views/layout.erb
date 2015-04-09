@@ -5,20 +5,32 @@
 	<meta charset="UTF-8">
 	<title><%= @page_title %></title>
 </head>
+
 <body>
+
 	<header>
-	<nav>
-		<ul>
-			<li>Home</li>
-			<li>All Contacts</li>
-			<li>Add New Contact</li>
-		</ul>	
-	</nav>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/contacts">All Contacts</a></li>
+				<li><a href="/contacts/new">Add New Contact</a></li>
+			</ul>	
+		</nav>
 	</header>	
 
-<h1>Welcome to <%= @crm_app_name %></h1>
+	<section class="bgwhite">
 
-<%= yield %>
+		<h1>Welcome to <%= @crm_app_name %></h1>
+
+		<%= yield %>
+	
+	</section>
+		
+
+		<footer>
+
+		</footer>
+
 
 </body>
 </html>
