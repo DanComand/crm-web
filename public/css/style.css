@@ -28,6 +28,7 @@ h1 {
 ul {
     list-style-type: none;
 	text-align: center;
+
 }
 
 .button {
@@ -79,6 +80,7 @@ a {
 	font-weight: 100;
 	font-size: 30px;
 	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .addnew {
@@ -101,13 +103,13 @@ a {
 	line-height: 30px;
 }
 
-.clistbg {
+/*.clistbg {
 
 	width: 300px;
 	height: 120px;
 	margin: 0 auto;
 	text-align: center;
-}
+}*/
 
 nav {
 	font-family: Helvetica;
@@ -120,10 +122,23 @@ nav {
 
 }
 
-li {
+nav li {
 	display: inline-block;
-	margin-left: 50px;
-	float: center;
+
+
+
+}
+
+li {
+
+	font-family: Helvetica;
+	list-style-type: none;
+	padding-left: 20px;
+	font-size: 20px;
+	line-height: 25px;
+
+
+
 }
 
 header {
@@ -165,13 +180,41 @@ footer {
 	height: 100%;
 	margin: 0 auto;
 	margin-top: 20px;
+	padding-bottom: 25px;
 	margin-bottom: 20px;
 }
 
+/*.contact-list {
+
+	font-family: Helvetica;
+	text-align: left;
+	font-size: 18px;
+	text-align: left;
+}
+*/
+
+button[type=submit] {
+	height: 50px;
+	width: 200px;
+	background-color: green;
+	border: 0px;
+	color: white;
+}
+
+button[value=submit] {
+
+	color: white;
+	font-size: 20px;
+	letter-spacing: 1px;
+}
 
 
+/*button[name=Submit] {
+
+	color: white;
+}
 
 
-
+*/
 
 
