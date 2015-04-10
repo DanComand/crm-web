@@ -5,13 +5,19 @@
 <!-- <ul> -->
 
 <% @contacts.each do |contact| %>
-  <li><%= contact.first_name %> <%= contact.last_name %></li>
-<% end %>
+   <div class="button">
+  <div class="contacts-new-text">
+  <a href="/show_contact/<%= contact.id%>"><%= contact.first_name %> <%= contact.last_name %></a>
+ </div>
+  </div>
+  <% end %>
 <!-- </ul> -->
 <!-- <ul> -->
-  <% $rolodex.contacts.each do |contact| %>
+<!--   <% @contacts.each do |contact| %>
     <li><%= contact.first_name %> <%= contact.last_name %></li>
   <% end %>
+ -->
+
 <!-- </ul> -->
 <!-- </div>
 </div> -->
