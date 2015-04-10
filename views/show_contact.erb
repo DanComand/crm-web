@@ -2,3 +2,8 @@
 <p><strong>Email:</strong> <%= @contact.email %></p>
 <p><strong>Note:</strong></p>
 <p><%= @contact.notes %></p>
+<div class="button">
+  <div class="contacts-new-text">
+  <a href="/edit_contact/<%= @contact.id%>">Edit contact</a>
+  </div>
+  </div>
