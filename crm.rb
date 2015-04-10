@@ -4,6 +4,8 @@ require 'sinatra'
 
 $rolodex= Rolodex.new
 
+
+
 get '/' do
 	@crm_app_name = "CRManagr"
 	@page_title = "Welcome"
@@ -33,6 +35,7 @@ post '/contacts' do
   redirect to('/contacts')
 end
 
-
-
+get '/contacts/1000' do
+  "Hello World"
+end
 
