@@ -5,11 +5,13 @@
 <!-- <ul> -->
 
 <% @contacts.each do |contact| %>
+   <a href="/show_contact/<%= contact.id%>">
    <div class="button">
   <div class="contacts-new-text">
-  <a href="/show_contact/<%= contact.id%>"><%= contact.first_name %> <%= contact.last_name %></a>
+  <%= contact.first_name %> <%= contact.last_name %>
  </div>
   </div>
+  </a>
   <% end %>
 <!-- </ul> -->
 <!-- <ul> -->

@@ -63,7 +63,7 @@ put "/contacts/:id" do
   end
 end
 
-delete "/contacts/:id" do
+get "/contacts/:id/delete" do
   @contact = @@rolodex.find(params[:id].to_i)
   if @contact
     @@rolodex.remove_contact(@contact)

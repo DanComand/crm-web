@@ -67,7 +67,20 @@ ul {
 
 }
 
+p {
 
+	font-family: "Helvetica Neue";
+	font-weight: 200;
+	text-align: left;
+	font-size: 20px;
+	text-decoration: none;
+	padding-top: 15px;
+	margin-left: 20px;
+	
+
+
+
+}
 
 a {
 	text-decoration: none;
@@ -233,5 +246,22 @@ label {
 
 	font-size: 25px;
 }
+/*
+.delete-button {
+
+	color: white;
+	font-size: 20px;
+	letter-spacing: 1px;
+	font-family: "Helvetica Neue";
+	font-weight: 100px;
+
+}*/
+
+input {
+
+	font-size: 18px;
+}
+
+
 
 
