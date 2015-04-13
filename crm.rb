@@ -1,15 +1,17 @@
 require_relative 'rolodex'
-require_relative 'contact'
+# require_relative 'contact'
 require 'sinatra'
 require 'pry'
 require 'data_mapper'
 
-@@rolodex = Rolodex.new
-@@rolodex.add_contact(Contact.new("Yehuda", "Katz", "yehuda@example.com", "Developer"))
-@@rolodex.add_contact(Contact.new("Mark", "Zuckerberg", "mark@facebook.com", "CEO"))
-@@rolodex.add_contact(Contact.new("Sergey", "Brin", "sergey@google.com", "Co-Founder"))
+DataMapper.setup(:default, "sqlite3:database.sqlite3")
 
-DataMapper.setup(:default, "sqlite3:database.sqlite")
+# @@rolodex = Rolodex.new
+# @@rolodex.add_contact(Contact.new("Yehuda", "Katz", "yehuda@example.com", "Developer"))
+# @@rolodex.add_contact(Contact.new("Mark", "Zuckerberg", "mark@facebook.com", "CEO"))
+# @@rolodex.add_contact(Contact.new("Sergey", "Brin", "sergey@google.com", "Co-Founder"))
+
+# DataMapper.setup(:default, "sqlite3:database.sqlite")
 
 class Contact
   include DataMapper::Resource
@@ -19,6 +21,7 @@ class Contact
   property :last_name, String
   property :email, String
   property :note, String
+
 end
 
 DataMapper.finalize
@@ -34,7 +37,7 @@ end
 get '/contacts' do
 	@crm_app_name = "CRManagr"
 	@page_title = "All contacts"
-	@contacts = @@rolodex.contacts
+	@contacts = Contact.all
 	erb :contacts
 end
 
@@ -45,8 +48,19 @@ end
 
 post '/contacts' do
   puts params
-  new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
-  @@rolodex.add_contact(new_contact)
+  new_contact = Contact.create(
+    first_name: params[:first_name],
+    last_name: params[:last_name],
+    email: params[:email],
+    note: params[:note], )
+
+
+
+
+
+
+    # params[:first_name], params[:last_name], params[:email], params[:note])
+  # @@rolodex.add_contact(new_contact)
   redirect to('/contacts')
 end
 
@@ -60,13 +74,13 @@ end
 
 # Generates the Edit Form
 get "/edit_contact/:id" do
-	@contact = @@rolodex.find(params[:id].to_i)
+	@contact = Contact.get(params[:id].to_i)
   erb :edit_contact
 end
 
 # Handles the PUT request from the Edit Form
 put "/contacts/:id" do
-  @contact = @@rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id].to_i)
   if @contact
     @contact.first_name = params[:first_name]
     @contact.last_name = params[:last_name]
