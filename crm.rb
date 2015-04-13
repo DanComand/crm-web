@@ -98,13 +98,13 @@ put "/contacts/:id" do
 end
 
 get "/contacts/:id/delete" do
-  @contact = contact.find(params[:id].to_i)
+  @contact = Contact.get(params[:id])
   if @contact
-    contact.remove_contact(@contact)
+    @contact.destroy
     redirect to("/contacts")
-    # erb :delete
   else
     raise Sinatra::NotFound
   end
+
 end
 
