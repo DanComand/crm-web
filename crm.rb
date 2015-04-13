@@ -77,12 +77,20 @@ end
 # Handles the PUT request from the Edit Form
 put "/contacts/:id" do
   @contact = Contact.get(params[:id].to_i)
+  # puts @contact.inspect
+  # puts params.inspect
   if @contact
-    @contact.first_name = params[:first_name]
-    @contact.last_name = params[:last_name]
-    @contact.email = params[:email]
-    @contact.notes = params[:notes]
+    # @contact.first_name = params[:first_name]
+    # @contact.last_name = params[:last_name]
+    # @contact.email = params[:email]
+    # @contact.note = params[:note]
 
+    @contact.update(
+    :first_name => params[:first_name],
+    :last_name => params[:last_name],
+    :email => params[:email],
+    :note => params[:note], )
+    
     redirect to("/contacts")
   else
     raise Sinatra::NotFound
@@ -90,9 +98,9 @@ put "/contacts/:id" do
 end
 
 get "/contacts/:id/delete" do
-  @contact = @@rolodex.find(params[:id].to_i)
+  @contact = contact.find(params[:id].to_i)
   if @contact
-    @@rolodex.remove_contact(@contact)
+    contact.remove_contact(@contact)
     redirect to("/contacts")
     # erb :delete
   else

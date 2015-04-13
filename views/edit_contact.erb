@@ -7,28 +7,9 @@
   <label>First Name</label><br><input value="<%= @contact.first_name %>" type="text" name="first_name" style="width: 200px;" placeholder="Your First Name"><br>
   <label>Last Name<br></label><input value="<%= @contact.last_name %>" type="text" name="last_name" style="width: 200px;" placeholder="Your Last Name"><br>
   <label>Email</label><br><input value="<%= @contact.email %>" type="text" name="email" style="width: 200px;" placeholder="Your Email Address"><br>
-  <label>Notes</label><br><input value="<%= @contact.notes %>" type="text" name="note" style="width: 200px;" placeholder="Special Comments"><br>
+  <label>Notes</label><br><input value="<%= @contact.note %>" type="text" name="note" style="width: 200px;" placeholder="Special Comments"><br>
 	<br>
   <button type="submit" value="submit">Save Changes</button>
 </form>
 
 </div>
-
-
-
-
-
-
-
-
-
-<!-- <h1>Edit a Contact</h1>
-
-<form action="/contacts/<%= @contact.id %>" method="post">
-  <input type="hidden" name="_method" value="put">
-  <input type="text" name="first_name" value="<%= @contact.first_name %>">
-  <input type="text" name="last_name" value="<%= @contact.last_name %>">
-  <input type="text" name="email" value="<%= @contact.email %>">
-  <input type="text" name="notes" value="<%= @contact.notes %>">
-  <input type="submit" name="Submit">
-</form> -->
