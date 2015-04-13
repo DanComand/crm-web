@@ -49,25 +49,21 @@ end
 post '/contacts' do
   puts params
   new_contact = Contact.create(
-    first_name: params[:first_name],
-    last_name: params[:last_name],
-    email: params[:email],
-    note: params[:note], )
+    :first_name => params[:first_name],
+    :last_name => params[:last_name],
+    :email => params[:email],
+    :note => params[:note], )
 
-
-
-
-
-
-    # params[:first_name], params[:last_name], params[:email], params[:note])
-  # @@rolodex.add_contact(new_contact)
   redirect to('/contacts')
 end
 
 get "/show_contact/:id" do
-  @contact = @@rolodex.find(params[:id])
-  # binding.pry
-  erb :show_contact
+  @contact = Contact.get(params[:id].to_i)
+  if @contact
+    erb :show_contact
+  else
+    raise Sinatra::NotFound
+  end
 end
 
 # $Rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar"))
