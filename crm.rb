@@ -6,13 +6,6 @@ require 'data_mapper'
 
 DataMapper.setup(:default, "sqlite3:database.sqlite3")
 
-# @@rolodex = Rolodex.new
-# @@rolodex.add_contact(Contact.new("Yehuda", "Katz", "yehuda@example.com", "Developer"))
-# @@rolodex.add_contact(Contact.new("Mark", "Zuckerberg", "mark@facebook.com", "CEO"))
-# @@rolodex.add_contact(Contact.new("Sergey", "Brin", "sergey@google.com", "Co-Founder"))
-
-# DataMapper.setup(:default, "sqlite3:database.sqlite")
-
 class Contact
   include DataMapper::Resource
 
@@ -66,8 +59,6 @@ get "/show_contact/:id" do
   end
 end
 
-# $Rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar"))
-
 # Generates the Edit Form
 get "/edit_contact/:id" do
 	@contact = Contact.get(params[:id].to_i)
@@ -77,13 +68,9 @@ end
 # Handles the PUT request from the Edit Form
 put "/contacts/:id" do
   @contact = Contact.get(params[:id].to_i)
-  # puts @contact.inspect
-  # puts params.inspect
+
   if @contact
-    # @contact.first_name = params[:first_name]
-    # @contact.last_name = params[:last_name]
-    # @contact.email = params[:email]
-    # @contact.note = params[:note]
+  
 
     @contact.update(
     :first_name => params[:first_name],

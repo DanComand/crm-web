@@ -1,5 +1,5 @@
 body {
-	background-image: url(img/bg.jpg); no-repeat center center fixed; 
+	background-image: url(img/bg2.jpg); no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -33,7 +33,7 @@ ul {
 
 .button {
 
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	width: 300px;
 	height: 60px;
 	margin: auto;
@@ -194,14 +194,16 @@ footer {
 
 .bgwhite {
 	
-	border-radius: 10px;
-	background-color: white;
+	/*border-radius: 10px;*/
+	/*background-color: white;*/
+	background-color: rgba(255, 255, 255, 0.8);
 	width: 500px;
 	height: 100%;
 	margin: 0 auto;
 	margin-top: 20px;
 	padding-bottom: 25px;
 	margin-bottom: 20px;
+	border-top: 4px solid black;
 
 }
 
@@ -225,7 +227,7 @@ button {
 }
 
 button {
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	color: white;
 	font-size: 20px;
 	letter-spacing: 1px;
